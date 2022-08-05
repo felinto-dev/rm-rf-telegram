@@ -1,7 +1,7 @@
 {
   "license": "private",
 	"name": "rm-rf-telegram",
-	"version": "1.0.1",
+	"version": "1.0.2",
   "scripts": {
     "build": "tsc",
     "start:dev": "nodemon --watch 'src/**' --ext 'ts,json,ftl' --ignore 'src/**/*.spec.ts' --exec 'ts-node --files src/index.ts'",
