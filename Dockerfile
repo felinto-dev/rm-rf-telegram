@@ -2,9 +2,7 @@ FROM node:16-alpine AS builder
 
 ENV NODE_ENV=development
 
-# install node-prune (https://github.com/tj/node-prune)
 RUN apk add curl bash --no-cache
-RUN curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash -s -- -b /usr/local/bin
 
 WORKDIR /usr/src/app
 
@@ -21,9 +19,6 @@ RUN yarn build
 
 # remove development dependencies
 RUN npm prune --production
-
-# run node prune
-RUN /usr/local/bin/node-prune
 
 # Build development purposes image
 FROM builder AS dev
