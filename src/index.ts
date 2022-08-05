@@ -8,10 +8,6 @@ import { apiThrottler } from "@grammyjs/transformer-throttler";
 import { handleBot } from "./handle";
 
 const fluent = new Fluent();
-fluent.addTranslation({
-  locales: "pt_br",
-  filePath: [`${process.cwd()}/src/translations/translation.pt_br.ftl`],
-});
 
 if (process.env.BANNED_WORDS?.split(",").length === 0) {
   throw new Error("BANNED_WORDS is required");
